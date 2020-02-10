@@ -1,3 +1,4 @@
+
 <h2>Ticket Information</h2>
 Purchaser: <%=@ticket.user.full_name%><br>
 <h4>Location: </h4>
@@ -11,5 +12,4 @@ Hours Purchased: <%=@ticket.hours_purchased %><br>
 Purchased at: <%=@ticket.created_at.strftime("%B %d, %Y at %H:%M")%><br>
 Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
 <%=@ticket.active ? "This ticket is active" : "This ticket has expired" %><br>
-
 

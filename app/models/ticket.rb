@@ -18,3 +18,4 @@ class Ticket < ApplicationRecord
         self.space.parking_zone.tariff_per_hour * self.hours_purchased
     end
 end
+
