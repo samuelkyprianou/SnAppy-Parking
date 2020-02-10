@@ -3,6 +3,7 @@ class Space < ApplicationRecord
     has_many :tickets
     has_many :car_users, through: :tickets
 
+
     def active_space
         total = 0
         arr = Space.where(street_name: self.street_name)
@@ -13,4 +14,5 @@ class Space < ApplicationRecord
         arr.count - total
     end
    
+
 end
