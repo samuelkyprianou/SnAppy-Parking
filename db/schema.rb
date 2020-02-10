@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_175558) do
     t.integer "space_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "valid"
+    t.boolean "active"
     t.integer "hours_purchased"
   end
 

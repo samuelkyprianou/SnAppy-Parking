@@ -42,3 +42,18 @@ objs.each do |obj|
 end
 
 
+a = User.create(user_name: "Jeff", email: "J@test.com", first_name: "Jeff", last_name: "Test")
+b = User.create(user_name: "Jim", email: "T@test.com", first_name: "Jim", last_name: "Test")
+
+c = Car.create(make: "Tesla", model: "Roadster", colour: "Red", registration_plate: "AB10CD")
+d = Car.create(make: "Vauxhall", model: "Corsa", colour: "Blue", registration_plate: "ZV99XD")
+
+e = CarUser.create(car_id: c.id, user_id: a.id)
+f = CarUser.create(car_id: c.id, user_id: b.id)
+g = CarUser.create(car_id: d.id, user_id: a.id)
+
+Ticket.create(car_user_id: g.id, space_id: Space.fifth.id, active: false, hours_purchased: 1)
+Ticket.create(car_user_id: f.id, space_id: Space.fourth.id, active: false, hours_purchased: 4)
+Ticket.create(car_user_id: e.id, space_id: Space.last.id, active: false, hours_purchased: 2)
+Ticket.create(car_user_id: e.id, space_id: Space.first.id, active: true, hours_purchased: 3)
+Ticket.create(car_user_id: f.id, space_id: Space.forty_two.id, active: true, hours_purchased: 4)
