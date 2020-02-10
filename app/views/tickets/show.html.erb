@@ -1,0 +1,7 @@
+
+<%= form_for @ticket do |f| %>
+    <%= f.label "Please select the number of hours you wish to purchase:" %>
+    <%= f.number_field :hours_purchased, in: 1...10%><br>
+
+<%= f.submit %>
+<% end %>

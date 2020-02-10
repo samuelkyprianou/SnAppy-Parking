@@ -1,0 +1,7 @@
+<h2><%= @user.user_name %>:</h2>
+<h3>You have registered the following cars:</h3>
+<ul>
+    <% @user.car_users.each do |cu| %>
+    <li><%= link_to cu.car.make, car_user_path(cu) %></li>
+    <% end %>
+</ul>
