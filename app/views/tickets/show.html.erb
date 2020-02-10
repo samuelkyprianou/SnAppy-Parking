@@ -1,0 +1,15 @@
+<h2>Ticket Information</h2>
+Purchaser: <%=@ticket.user.full_name%><br>
+<h4>Location: </h4>
+Control Zone: <%=@ticket.space.parking_zone.control_zone%><br>
+Area: <%=@ticket.space.parking_zone.area_name%><br>
+Street Name: <%=@ticket.space.street_name %><br>
+Post Code: <%=@ticket.space.post_code %><br>
+<h4>Ticket Details:</h4>
+Ticket Amount: <%="£#{@ticket.ticket_amount}"%><br>
+Hours Purchased: <%=@ticket.hours_purchased %><br>
+Purchased at: <%=@ticket.created_at.strftime("%B %d, %Y at %H:%M")%><br>
+Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
+<%=@ticket.active ? "This ticket is active" : "This ticket has expired" %><br>
+
+
