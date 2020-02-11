@@ -8,5 +8,8 @@
 
 <%= form_for(@ticket) do |f| %>
 <%= f.label :hours_purchased %>
-<%= f.number_field :hours_purchased %>
+<%= f.select :hours_purchased, (1..12) %><br>
+<%= collection_select :car, :car_id, @user.cars, :id, :registration_plate  %>
+<%= f.hidden_field :space_id, value: @space.id.to_i %>
+<%= f.submit %>
 <%end%>

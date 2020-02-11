@@ -14,8 +14,13 @@ class UsersController < ApplicationController
 
         def create
           # Create user here
-          @user = User.create(user_params)
-          redirect_to user_path(@user)
+          @user = User.new(user_params)
+          @user.save
+          if @user.valid?
+            redirect_to user_path(@user)
+          else
+            render :new
+          end
         end
 
         def destroy

@@ -1,0 +1,21 @@
+<% if @car.errors.full_messages.length > 0 %>
+  <h2><%= pluralize(@car.errors.full_messages.length , "error") %> prohibited this car from being registered:</h2>
+  <ul>
+    <% @car.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for(@car) do |f| %>
+<%= f.label :make %>
+<%= f.text_field :make %>
+<%= f.label :model %>
+<%= f.text_field :model %>
+<%= f.label :colour %>
+<%= f.text_field :colour %>
+<%= f.label :registration_plate %>
+<%= f.text_field :registration_plate %>
+<%= f.submit %>
+<%end%>
