@@ -17,5 +17,7 @@ class Ticket < ApplicationRecord
     def ticket_amount
         self.space.parking_zone.tariff_per_hour * self.hours_purchased
     end
+
+    
 end
 

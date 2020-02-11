@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_09_175558) do
+ActiveRecord::Schema.define(version: 2020_02_11_121137) do
 
   create_table "car_users", force: :cascade do |t|
     t.integer "car_id"
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_175558) do
     t.string "email"
     t.string "first_name"
     t.string "last_name"
+    t.string "password_digest"
   end
 
 end

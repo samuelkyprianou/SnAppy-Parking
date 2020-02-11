@@ -4,7 +4,7 @@ class Space < ApplicationRecord
     has_many :car_users, through: :tickets
 
 
-    def active_space
+    def number_active_spaces
         total = 0
         arr = Space.where(street_name: self.street_name)
         arr.map do |space|
@@ -13,6 +13,20 @@ class Space < ApplicationRecord
         end
         arr.count - total
     end
+
+    def self.available_spaces(array)
+        space_instance = []
+        array.each do |space|
+            if space.tickets.empty?
+                space_instance << space
+            elsif space.tickets.select { |ticket| ticket.active == true }.empty?
+                space_instance << space
+            end
+        end
+        space_instance
+    end
+
+
    
 
 end

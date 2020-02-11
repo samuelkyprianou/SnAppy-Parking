@@ -1,0 +1,12 @@
+<h1>Parking Details:</h1>
+<%=@space.parking_zone.area_name%><br>
+<%=@space.street_name%><br>
+<%=@space.post_code%><br>
+<%=@space.parking_zone.tariff_per_hour%><br>
+<%=@space.operational_hours%><br>
+
+
+<%= form_for(@ticket) do |f| %>
+<%= f.label :hours_purchased %>
+<%= f.number_field :hours_purchased %>
+<%end%>
