@@ -2,6 +2,9 @@ class Ticket < ApplicationRecord
     belongs_to :car_user
     belongs_to :space
 
+    validates :hours_purchased, presence: :true
+    
+
     def expiration
         self.created_at + self.hours_purchased.hours
     end
@@ -18,6 +21,6 @@ class Ticket < ApplicationRecord
         self.space.parking_zone.tariff_per_hour * self.hours_purchased
     end
 
-    
+
 end
 

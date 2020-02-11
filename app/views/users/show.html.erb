@@ -4,4 +4,5 @@
     <% @user.car_users.each do |cu| %>
     <li><%= link_to cu.car.make, car_user_path(cu) %></li>
     <% end %>
+    <li><%= link_to "Register a New Car", new_car_path %></li>
 </ul>
