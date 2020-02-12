@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorize_user, only: [:show]
+  before_action :authorize_user, only: [:show, :edit]
   before_action :users_profile?, only: [:show]
         
   
@@ -12,6 +12,10 @@ class UsersController < ApplicationController
           @user = User.new
         end
 
+        def edit
+          @user = User.find(params[:id])
+        end
+
         def create
           # Create user here
           @user = User.new(user_params)
@@ -20,6 +24,16 @@ class UsersController < ApplicationController
             redirect_to user_path(@user)
           else
             render :new
+          end
+        end
+
+        def update
+          @user = User.find(params[:id])
+          @user.update(user_params)
+          if @user.valid?
+            redirect_to user_path(@user)
+          else
+            render :edit
           end
         end
 
@@ -37,4 +51,5 @@ class UsersController < ApplicationController
             redirect_to user_path(current_user.id)
           end
         end
+
 end
