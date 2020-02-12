@@ -15,5 +15,7 @@
 <% @car_user.most_recent_tickets(5).each do |ticket| %>
 <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %> <%= ticket.active ? "Your ticket is active" : "This ticket is not active" %> </li>
 
-<%end%> 
+<%end%>
 </ul>
+
+
