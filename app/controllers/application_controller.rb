@@ -14,4 +14,11 @@ class ApplicationController < ActionController::Base
       redirect_to new_session_path
     end
   end
+
+  def user_cars?
+    if current_user.car_users.empty?
+      flash[:notice] = "Please register a car first!"
+            redirect_to new_car_path
+    end
+  end
 end
