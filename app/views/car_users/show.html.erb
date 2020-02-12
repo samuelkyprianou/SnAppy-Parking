@@ -1,21 +1,32 @@
-<h2>Car Information:</h2><br>
-<h4><%=@car_user.car.make%></h4>
-<h4><%=@car_user.car.model%></h4>
-<h4><%=@car_user.car.colour%></h4>
-<h4><%=@car_user.car.registration_plate%></h4>
-<h1>Active Tickets:</h1>
-<ul>
-<% @car_user.active_tickets.each do |ticket| %>
-<li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %></li>
+<h2>Car Information:</h2>
+    <ul>
+        <li> Make: <%=@car_user.car.make%></li>
+        <li> Model: <%=@car_user.car.model%></li>
+        <li> Colour: <%=@car_user.car.colour%></li>
+        <li> Registration Plate: <%=@car_user.car.registration_plate%></li>
+    </ul>
+
+    <h3>Active Tickets:</h3>
+        <ul>
+            <% @car_user.active_tickets.each do |ticket| %>
+                <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %></li>
+            <%end%>
+        </ul>
 <%end%>
 </ul>
 
-<h1>Most Recent Tickets:</h1>
-<ul>
-<% @car_user.most_recent_tickets(5).each do |ticket| %>
-<li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %> <%= ticket.active ? "Your ticket is active" : "This ticket is not active" %> </li>
 
-<%end%>
-</ul>
+    <h3>Most Recent Tickets:</h3>
+        <% if @car_user.tickets >= 1 %>
+            <ul>
+                <% @car_user.most_recent_tickets(5).each do |ticket| %>
+                    <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %> <%= ticket.active ? "Your ticket is active" : "This ticket is not active" %> </li>
+                <%end%>
+            </ul>
+        <% else %>
+            <%= You have no recent tickets %>
+        <% end %>
 
+<%= link_to 'Purchase a ticket', parking_zones_path %> <br>
+<%= link_to 'Back', user_path(current_user) %>
 

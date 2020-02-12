@@ -1,9 +1,11 @@
 
-<h1>Parking Zones</h1>
-<h2> Select a Parking zone:</h2>
-
+<h2>Parking Zones</h2>
+<h3> Select a Parking zone:</h3>
+<ul>
     <% @parking_zones.each do |parking_zone| %>
-      <h3><%= link_to parking_zone.area_name, parking_zone %></h3>  
+      <li><%= link_to parking_zone.area_name, parking_zone %></li>  
     <% end %>
+  </ul>
+<%= link_to "Back", car_user_path(current_user) %>
 
 
