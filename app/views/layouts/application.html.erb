@@ -9,16 +9,18 @@
     
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-  <body>
-   <% if flash[:notice] %>
+  <% if flash[:notice] %>
       <h3><%= flash[:notice]%></h3>
     <% end %>
+
+  <body>
      <% if current_user %>
-      <h2>Hi, <%= current_user.user_name %>!</h2>
-      <%= link_to "Logout", sessions_path, method: :delete %>
+      <nav><h2>Hi, <%= current_user.user_name %>!</h2></nav>
+      <nav><%= link_to "Logout", sessions_path, method: :delete %></nav>
+      <nav><%= link_to 'Purchase a ticket', parking_zones_path %></nav> 
+
     <% else %>
-      <%= link_to "Login", new_session_path %>
+      <nav><%= link_to "Login", new_session_path %></nav>
     <% end %>
     <%= yield %>
   </body>
