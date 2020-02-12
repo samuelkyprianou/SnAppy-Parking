@@ -159,26 +159,4 @@ ul li {
 	font-size: 10px;
 }
 
-form {
-	padding-top: 20px;
-}
 
-label {
-	float:left;
-	width: 144px;
-	text-align: right;
-}
-
-input {
-	width: 200px;
-}
-
-textarea {
-	width: 198px;
-	height: 100px;
-}
-
-input#submit {
-	width: 204px;
-	margin-left: 148px;
-}
