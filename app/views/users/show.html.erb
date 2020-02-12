@@ -4,5 +4,24 @@
     <% @user.car_users.each do |cu| %>
     <li><%= link_to cu.car.make, car_user_path(cu) %></li>
     <% end %>
-    <li><%= link_to "Register a New Car", new_car_path %></li>
 </ul>
+<%= link_to "Register a New Car", new_car_path %>
+
+<%= link_to "Find a Parking Space", parking_zones_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.car_users.each do |cu| %>
+      <tr>
+        <td><%= link_to cu.car.make, car_user_path(cu) %></td>
+        <td><%= link_to 'Destroy', cu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

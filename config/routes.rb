@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :parking_zones
   resources :cars
   resources :users
+  root to: 'pages#home'
   get '/tickets/new/:parking_zone_id/:street_name', to: 'tickets#new', as: 'street_ticket'
   get "/sessions/new", to: "sessions#new", as: "new_session"
   post "/sessions", to: "sessions#create", as: "sessions"
