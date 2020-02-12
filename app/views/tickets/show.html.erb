@@ -13,3 +13,5 @@ Purchased at: <%=@ticket.created_at.strftime("%B %d, %Y at %H:%M")%><br>
 Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
 <%=@ticket.active ? "This ticket is active" : "This ticket has expired" %><br>
 
+<%= link_to "Back to Profile", user_path(current_user.id) %>
+
