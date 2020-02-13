@@ -9,10 +9,8 @@ class CarUser < ApplicationRecord
         arr.order("(created_at) DESC")
     end
 
-    def most_recent_tickets(limit=5)
-        tickets
-      .where("tickets.id")
-      .order("(tickets.id) DESC")
-      .limit(limit)
+    def expired_tickets
+      arr = self.tickets.where(active: false)
+        arr.order('created_at DESC').take(5) 
     end
 end

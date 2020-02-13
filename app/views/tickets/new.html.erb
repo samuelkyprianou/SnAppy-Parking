@@ -1,3 +1,4 @@
+
 <h1>Parking Details:</h1>
 <%=@space.parking_zone.area_name%><br>
 <%=@space.street_name%><br>
@@ -20,6 +21,10 @@
 <%= f.submit class: "btn btn-primary" %>
 <%end%>
 
+<p>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@space.latitude},#{@space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", alt: "Map" %>
+</p>
 
 <%= link_to 'Back', parking_zone_path(@space.parking_zone.id) %>
+
 

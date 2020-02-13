@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
   <% if flash[:notice] %>
       <h3><%= flash[:notice]%></h3>
@@ -29,6 +30,7 @@
         <ul class="menu-area">
           <li><a href="/">Home</a></li>
           <li><%= link_to "Login", new_session_path %></li>
+          
           
         </ul>
       </nav>
