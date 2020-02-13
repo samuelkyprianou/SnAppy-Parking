@@ -7,19 +7,14 @@
   <div>
         <%= form_tag sessions_path do %>
         <table class = "center">
-          <thead>
-            <tr>
-              <th col span="2" style= "text-center" ></th>
-            </tr>
-          </thead>
-        
+         
           <tbody>
               <tr>
-                <td><%= label :user, :user_name %>:</td>
+                <td><%= label :user, :user_name %></td>
                 <td><%= text_field :user, :user_name %></td>
               </tr>
               <tr>
-                <td><%= label :user, :password %>:</td>  
+                <td><%= label :user, :password %></td>  
                 <td><%= password_field :user, :password %></td>
               </tr>
           </tbody>
@@ -32,4 +27,4 @@
 
 </div>
 </div>
-</div>
+</div>;
