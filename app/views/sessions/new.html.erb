@@ -2,15 +2,29 @@
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5">
 <body class = "text-center">
-  <h1 class= "cover-heading">Welcome to SnAppy Parking!</h1>
-  <h2>Login: </h2>
+  <h1 class= "cover-heading" style="color:rgb(255, 115, 0)" >Welcome to SnAppy Parking!</h1>
+  <h3>Login: </h3><br>
   <div>
         <%= form_tag sessions_path do %>
-            <%= label :user, :user_name %>:
-            <%= text_field :user, :user_name %><br>
-            <%= label :user, :password %>:  
-            <%= password_field :user, :password %><br><br>
-            <button type="submit" class="btn btn-danger text-uppercase font-weight-bold">Login</button>
+        <table class = "center">
+          <thead>
+            <tr>
+              <th col span="2" style= "text-center" ></th>
+            </tr>
+          </thead>
+        
+          <tbody>
+              <tr>
+                <td><%= label :user, :user_name %>:</td>
+                <td><%= text_field :user, :user_name %></td>
+              </tr>
+              <tr>
+                <td><%= label :user, :password %>:</td>  
+                <td><%= password_field :user, :password %></td>
+              </tr>
+          </tbody>
+        </table><br>
+        <button type="submit" class="btn btn-danger text-uppercase " >Login</button>
         <% end %>
   </div>
   
