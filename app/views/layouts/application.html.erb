@@ -13,17 +13,29 @@
       <h3><%= flash[:notice]%></h3>
     <% end %>
 
-  <body>
+  <body >
      <% if current_user %>
-      <nav><h2>Hi, <%= current_user.user_name %>!</h2></nav>
-      <nav><%= link_to "Logout", sessions_path, method: :delete %></nav>
-      <nav><%= link_to 'Purchase a ticket', parking_zones_path %></nav> 
-
+     <div class="custom-padding">
+    <nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+  </a>
+</nav>
+    </div>
     <% else %>
-      <nav><%= link_to "Login", new_session_path %></nav>
+    <div class="custom-padding">
+      <nav>
+        <div class="logo">SnAppy</div>
+    
+        <ul class="menu-area">
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "Login", new_session_path %></li>
+          
+        </ul>
+      </nav>
     <% end %>
     <%= yield %>
-  </body>
+  </body >
 </html>
 
 
