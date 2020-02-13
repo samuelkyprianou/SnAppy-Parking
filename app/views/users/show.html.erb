@@ -1,13 +1,15 @@
 <div class="container">
   <div class="card border-0 shadow my-5">
     <div class="card-body p-5">
+      <h1>Welcome to SnAppy Parking!</h1>
 <% if @user.car_users.count >= 1 %>
   <h3>You have registered the following cars:</h3>
+  <h3>Select a car to see your tickets</h3>
     <ul>
       <table>
         <thead>
           <tr>
-            <th colspan="3"></th>
+            <th col span="2" style="width: 75%"></th>
           </tr>
         </thead>
       
@@ -15,6 +17,7 @@
           <% @user.car_users.each do |cu| %>
             <tr>
               <td><%= link_to cu.car.make, car_user_path(cu) %></td>
+              
               <td><%= link_to 'Destroy', cu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
@@ -22,12 +25,16 @@
       </table>
     </ul>
   <% else %>
-    <h4>You have no cars registered!</h4> 
+    <h4>You currently have no cars registered!</h4>
   <% end %>
 
-<%= link_to "Register a New Car", new_car_path %><br>
 
-<%= link_to "Find a Parking Space", parking_zones_path %><br>
+
+
+<a class="btn btn-danger" href="/cars/new" role="button">Register a New Car</a>
+<a class="btn btn-danger" href="/parking_zones" role="button">Find a Parking Space</a>
+
+
 
 </div>
 </div>
