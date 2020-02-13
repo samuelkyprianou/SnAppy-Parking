@@ -9,18 +9,19 @@
     <% end %>
   </ul>
 <% end %>
-
+<h1>Register a Car</h1>
+<p>In order to purchase a parking ticket or browse our spaces you need to register a car with us!</p>
 
 <%= form_for(@car) do |f| %>
-<%= f.label :make %><br>
+<%= f.label :make %>:<br>
 <%= f.text_field :make %><br>
-<%= f.label :model %><br>
+<%= f.label :model %>:<br>
 <%= f.text_field :model %><br>
-<%= f.label :colour %><br>
+<%= f.label :colour %>:<br>
 <%= f.text_field :colour %><br>
-<%= f.label :registration_plate %><br>
-<%= f.text_field :registration_plate %><br>
-<%= f.submit %>
+<%= f.label :registration_plate %>:<br>
+<%= f.text_field :registration_plate %><br><br>
+<button type="submit" class="btn btn-danger text-uppercase ">Register Car</button>
 <%end%>
 </div>
 </div>

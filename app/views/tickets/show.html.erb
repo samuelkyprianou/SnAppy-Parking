@@ -8,7 +8,8 @@ Control Zone: <%=@ticket.space.parking_zone.control_zone%><br>
 Area: <%=@ticket.space.parking_zone.area_name%><br>
 Street Name: <%=@ticket.space.street_name %><br>
 Post Code: <%=@ticket.space.post_code %><br>
-<h4>Ticket Details:</h4>
+<h4>Ticket Details:</h4> 
+
 Ticket Amount: <%="£#{@ticket.ticket_amount}"%><br>
 Hours Purchased: <%=@ticket.hours_purchased %><br>
 Purchased at: <%=@ticket.created_at.strftime("%B %d, %Y at %H:%M")%><br>
@@ -18,6 +19,7 @@ Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
 <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@ticket.space.latitude},#{@ticket.space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", alt: "Map" %>
 </p>
+
 
 <%= link_to "Back to Profile", user_path(current_user.id) %>
 
