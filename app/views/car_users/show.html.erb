@@ -28,8 +28,9 @@
             <%= "You have no recent tickets" %>
         <% end %>
 
-<%= link_to 'Purchase a ticket', parking_zones_path %> <br>
-<%= link_to 'Back', user_path(current_user) %>
+
+ <%= link_to '<button type="button" class="btn btn-danger text-uppercase ">Back</button>'.html_safe, user_path(current_user) %>
+ <%= link_to '<button type="button" class="btn btn-danger text-uppercase ">Purchase a ticket</button>'.html_safe, parking_zones_path %>
 
 </div>
 </div>
