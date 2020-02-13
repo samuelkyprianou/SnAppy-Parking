@@ -13,15 +13,15 @@
     <h3>Active Tickets:</h3>
         <ul>
             <% @car_user.active_tickets.each do |ticket| %>
-                <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %></li>
+                <li><%= link_to "#{ticket.space.street_name}, Purchased - #{ticket.created_at.strftime("%B %d, %Y at %H:%M")}", ticket_path(ticket.id) %></li>
             <%end%>
         </ul>
 
 
-    <h3>Most Recent Tickets:</h3>
+    <h3>Recentley Expired Tickets:</h3>
             <ul>
-                <% @car_user.most_recent_tickets(5).each do |ticket| %>
-                    <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %> <%= ticket.active ? "Your ticket is active" : "This ticket is not active" %> </li>
+                <% @car_user.expired_tickets.each do |ticket| %>
+                    <li><%= link_to "#{ticket.space.street_name}, Purchased - #{ticket.created_at.strftime("%B %d, %Y at %H:%M")}, Expired - #{ticket.expiration.strftime("%B %d, %Y at %H:%M")}", ticket_path(ticket.id) %></li>
                 <%end%>
             </ul>
         <% else %>

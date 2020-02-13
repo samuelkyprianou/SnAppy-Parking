@@ -56,6 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 # *
 # *= require_tree .
 # *= require_self
