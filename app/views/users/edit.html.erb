@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+
+
+<body class = "text-center" data-gr-c-s-loaded= "true">
+
+  <h1><%= "Hi, #{current_user.user_name}!"%></h1>
+  <p class= "lead"> Please change any information you wish to update below:</p>
+
 <% if @user.errors.full_messages.length > 0 %>
   <h2><%= pluralize(@user.errors.full_messages.length , "error") %> prohibited this car from being registered:</h2>
   <ul>
@@ -9,15 +19,22 @@
 
 
 <%= form_for(@user) do |f| %>
-  <%= f.label :username %><br>
+  <%= f.label :username %>
   <%= f.text_field :user_name %><br>
-  <%= f.label :first_name %><br>
+  <%= f.label :first_name %>
   <%= f.text_field :first_name %><br>
-  <%= f.label :last_name %><br>
+  <%= f.label :last_name %>
   <%= f.text_field :last_name %><br>
-  <%= f.label :email %><br>
+  <%= f.label :email %>
   <%= f.email_field :email %><br>
-  <%= f.label :password %><br>
+  <%= f.label :password %>
   <%= f.password_field :password %><br>
-  <%= f.submit %><br>
+  <%= f.submit class: "btn btn-danger" %>
   <%end%>
+
+</body>
+
+
+</div>
+</div>
+</div>
