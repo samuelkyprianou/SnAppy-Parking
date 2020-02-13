@@ -30,7 +30,7 @@
 
 </div>
 <p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@space.latitude},#{@space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", alt: "Map" %>
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@space.latitude},#{@space.longitude}&key=#{ENV["GOOGLE_KEY"]}", alt: "Map" %>
 </p>
 
 
