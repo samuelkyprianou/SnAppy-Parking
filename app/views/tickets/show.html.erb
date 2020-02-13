@@ -1,6 +1,8 @@
 <div class="container">
     <div class="card border-0 shadow my-5">
       <div class="card-body p-5">
+
+<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@ticket.space.latitude},#{@ticket.space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", :class => "rounded float-right border border-dark", alt: "Map" %>
 <h1>Ticket Information</h1>
 Purchaser: <%=@ticket.user.full_name%><br>
 <h4>Location: </h4>
@@ -17,7 +19,6 @@ Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
 <%=@ticket.active ? "This ticket is active" : "This ticket has expired" %><br>
 
 <p>
-<%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@ticket.space.latitude},#{@ticket.space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", alt: "Map" %>
 </p>
 
 
