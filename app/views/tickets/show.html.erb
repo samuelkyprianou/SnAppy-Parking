@@ -1,4 +1,6 @@
-
+<div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
 <h2>Ticket Information</h2>
 Purchaser: <%=@ticket.user.full_name%><br>
 <h4>Location: </h4>
@@ -18,4 +20,8 @@ Expired at: <%=@ticket.expiration.strftime("%B %d, %Y at %H:%M")%><br>
 </p>
 
 <%= link_to "Back to Profile", user_path(current_user.id) %>
+
+</div>
+</div>
+</div>
 

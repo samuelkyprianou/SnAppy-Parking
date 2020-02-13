@@ -1,15 +1,21 @@
-<body>
-
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+<body class = "text-center">
+  <h1 class= "cover-heading">Welcome to SnAppy Parking!</h1>
   <h2>Login: </h2>
   <div>
         <%= form_tag sessions_path do %>
-            <h3><%= label :user, :user_name %></h3>
-            <%= text_field :user, :user_name %>
-            <h3><%= label :user, :password %></h3>
-            <%= password_field :user, :password %><br>
-            <%= submit_tag "Login" %>
+            <%= label :user, :user_name %>:
+            <%= text_field :user, :user_name %><br>
+            <%= label :user, :password %>:  
+            <%= password_field :user, :password %><br><br>
+            <button type="submit" class="btn btn-danger text-uppercase font-weight-bold">Login</button>
         <% end %>
   </div>
   
-  </body>
+ </body>
 
+</div>
+</div>
+</div>

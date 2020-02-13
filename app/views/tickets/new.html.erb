@@ -1,30 +1,45 @@
 
-<h1>Parking Details:</h1>
-<%=@space.parking_zone.area_name%><br>
-<%=@space.street_name%><br>
-<%=@space.post_code%><br>
-<%=@space.parking_zone.tariff_per_hour%><br>
-<%=@space.operational_hours%><br>
+<div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+
+<h1 class= "cover-heading text-center" >Parking Details:</h1>
+<p class= "lead">The parking space you are about to purchase can be found at the following location:</p>
+<p>Area Name: <%=@space.parking_zone.area_name%></p>
+<p>Street Name: <%=@space.street_name%></p>
+<p>Postcode: <%=@space.post_code%></p>
+<p class= "lead"> Additional Information: </p>
+    <p>Tarriff per hour: <%=@space.parking_zone.tariff_per_hour%></p>
+    <p>Operational hours: <%=@space.operational_hours%></p>
+
 
 
 <%= form_for(@ticket) do |f| %>
 <div class="form-group">
-<%= f.label :hours_purchased %>
+<%= f.label :hours_purchased %><br>
 <%= f.select :hours_purchased, (1..12) %><br>
 </div>
 <div class="form-group">
-
+    <p>Please select car from registration plate:</p>
 <%= collection_select :car, :car_id, @user.cars, :id, :registration_plate  %>
 <%= f.hidden_field :space_id, value: @space.id.to_i %>
 </div>
-
-<%= f.submit class: "btn btn-primary" %>
+<div class = "text-center">
+<%= f.submit class: "btn btn-danger" %><br><br>
 <%end%>
 
+</div>
 <p>
 <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=17&size=400x300&markers=size:small%7Ccolor:red%7C#{@space.latitude},#{@space.longitude}&key=AIzaSyCCdJ-p2T1Q_9ZTt2DDn5fNJJWVMumwsHY", alt: "Map" %>
 </p>
 
+
+
 <%= link_to 'Back', parking_zone_path(@space.parking_zone.id) %>
 
+</body>
+
+</div>
+</div>
+</div>
 

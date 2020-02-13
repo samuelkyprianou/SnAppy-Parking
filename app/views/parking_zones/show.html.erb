@@ -1,6 +1,9 @@
 
-<h1><%= @parking_zone.area_name %>:</h1>
-<h3>Street Name:</h3>
+<div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+<h2>You are looking at streets in <%= @parking_zone.area_name %>:</h2>
+<p class= "lead">Street Name:</p>
         <ul><% @parking_zone.unique_street_names.each do |street|%>
             <li><%= link_to street.street_name, street_ticket_path(:parking_zone_id => street.parking_zone_id, :street_name => street.street_name) %> - Number of spaces available: <%= street.number_active_spaces %> </li>
             
@@ -8,4 +11,9 @@
         </ul>
 
         <%= link_to "Back", parking_zones_path %>
+</div>
+</div>
+</div>
+
+        
    

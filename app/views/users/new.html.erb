@@ -1,3 +1,8 @@
+<div class="container">
+  <div class="card border-0 shadow my-5">
+    <div class="card-body p-5">
+
+<body class = "text-center" data-gr-c-s-loaded= "true">
 <% if @user.errors.full_messages.length > 0 %>
   <h2><%= pluralize(@user.errors.full_messages.length , "error") %> prohibited this car from being registered:</h2>
   <ul>
@@ -7,19 +12,30 @@
   </ul>
 <% end %>
 
+<h1 class= "cover-heading"> Welcome to SnAppy!</h1>
+<p class= "lead"> To find and purchase parking you will need to create an account</p>
+<p class= "lead"> Please fill in the form below with your information:</p>
+
+<form>
 <div class="form-group">
 <%= form_for(@user) do |f| %>
-  <%= f.label :username %><br>
+  <%= f.label :username %>:
   <%= f.text_field :user_name %><br>
-  <%= f.label :first_name %><br>
+  <%= f.label :first_name %>:
   <%= f.text_field :first_name %><br>
-  <%= f.label :last_name %><br>
+  <%= f.label :last_name %>:
   <%= f.text_field :last_name %><br>
-  <%= f.label :email %><br>
+  <%= f.label :email %>:
   <%= f.email_field :email %><br>
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br>
-  <%= f.submit %><br>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <%= f.label :password %>:
+  <%= f.password_field :password %><br><br>
+  <%= f.submit class: "btn btn-danger" %>
   <%end%>
 </div>
   <%= link_to "Home", root_path %>
+</form>
+</body>
+
+
+
