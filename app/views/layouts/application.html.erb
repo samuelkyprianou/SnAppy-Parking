@@ -13,18 +13,28 @@
       <h3><%= flash[:notice]%></h3>
     <% end %>
 
-  <body>
+  <body >
      <% if current_user %>
+
       <nav><h2>Hi, <%= current_user.user_name %>!</h2></nav>
       <nav><%= link_to "Logout", sessions_path, method: :delete %></nav>
       <nav><%= link_to 'Purchase a ticket', parking_zones_path %></nav> 
       <nav><%= link_to 'Edit User', edit_user_path(current_user.id)%>
 
     <% else %>
-      <nav><%= link_to "Login", new_session_path %></nav>
+    <div class="custom-padding">
+      <nav>
+        <div class="logo">SnAppy</div>
+    
+        <ul class="menu-area">
+          <li><a href="/">Home</a></li>
+          <li><%= link_to "Login", new_session_path %></li>
+          
+        </ul>
+      </nav>
     <% end %>
     <%= yield %>
-  </body>
+  </body >
 </html>
 
 
