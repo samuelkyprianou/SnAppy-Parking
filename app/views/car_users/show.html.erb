@@ -5,6 +5,7 @@
         <li> Colour: <%=@car_user.car.colour%></li>
         <li> Registration Plate: <%=@car_user.car.registration_plate%></li>
     </ul>
+        <% if @car_user.tickets.count >= 1 %>
 
     <h3>Active Tickets:</h3>
         <ul>
@@ -13,16 +14,17 @@
             <%end%>
         </ul>
 
+
     <h3>Most Recent Tickets:</h3>
-        <% if @car_user.tickets >= 1 %>
             <ul>
                 <% @car_user.most_recent_tickets(5).each do |ticket| %>
                     <li><%= ticket.space.street_name %> - <%= ticket.created_at.strftime("%B %d, %Y at %H:%M") %> - <%= ticket.expiration.strftime("%B %d, %Y at %H:%M") %> <%= ticket.active ? "Your ticket is active" : "This ticket is not active" %> </li>
                 <%end%>
             </ul>
         <% else %>
-            <%= You have no recent tickets %>
+            <%= "You have no recent tickets" %>
         <% end %>
 
 <%= link_to 'Purchase a ticket', parking_zones_path %> <br>
 <%= link_to 'Back', user_path(current_user) %>
+

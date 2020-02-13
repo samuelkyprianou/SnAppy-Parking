@@ -1,4 +1,5 @@
 class TicketsController < ApplicationController
+  before_action :authorize_user, only: [:show, :new, :create]
     before_action :create_new_ticket?, only: [:new] 
 
 
@@ -11,7 +12,7 @@ class TicketsController < ApplicationController
         all_spaces = Space.where(street_name: params[:street_name])
         @available_spaces = Space.available_spaces(all_spaces)
         @space = @available_spaces.first
-        @user = User.find(session[:user_id])
+        @user = User.find(current_user.id)
     end
   
     def create

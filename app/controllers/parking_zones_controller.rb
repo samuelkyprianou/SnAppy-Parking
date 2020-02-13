@@ -1,4 +1,7 @@
 class ParkingZonesController < ApplicationController
+    before_action :authorize_user, only: [:index, :show]
+    before_action :user_cars?, only: [:index, :show]
+    
     def index
         @parking_zones = ParkingZone.all
     end
