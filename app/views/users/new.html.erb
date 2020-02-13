@@ -16,8 +16,7 @@
 <p class= "lead"> To find and purchase parking you will need to create an account</p>
 <p class= "lead"> Please fill in the form below with your information:</p>
 
-<form>
-<div class="form-group">
+
 <%= form_for(@user) do |f| %>
   <%= f.label :username %>:
   <%= f.text_field :user_name %><br>
@@ -32,9 +31,9 @@
   <%= f.password_field :password %><br><br>
   <%= f.submit class: "btn btn-danger" %>
   <%end%>
-</div>
+
   <%= link_to "Home", root_path %>
-</form>
+
 </body>
 
 
