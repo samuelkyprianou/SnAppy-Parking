@@ -19,9 +19,24 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    
+  }
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
   }
 
+  .menu-area a:hover {
+    background: tomato;
+    color: white;
+  }
   
+  h1{
+    color: rgb(255, 115, 0);
+  }
+
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-danger {
+    background-color: rgb(255, 115, 0) !important;
+}
  
+
 
