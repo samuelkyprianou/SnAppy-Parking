@@ -1,4 +1,7 @@
-<h2>Car Information:</h2>
+<div class="container">
+    <div class="card border-0 shadow my-5">
+      <div class="card-body p-5">
+<h1>Car Information:</h1>
     <ul>
         <li> Make: <%=@car_user.car.make%></li>
         <li> Model: <%=@car_user.car.model%></li>
@@ -27,4 +30,8 @@
 
 <%= link_to 'Purchase a ticket', parking_zones_path %> <br>
 <%= link_to 'Back', user_path(current_user) %>
+
+</div>
+</div>
+</div>
 

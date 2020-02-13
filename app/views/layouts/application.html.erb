@@ -4,37 +4,50 @@
     <title>SnAppy</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <% if flash[:notice] %>
-      <h3><%= flash[:notice]%></h3>
+  
+    <% if flash[:notice] %>
+      <div class="alert alert-danger" role="alert">
+        <%= flash[:notice]%>
+      </div>  
     <% end %>
 
-  <body >
+
+
      <% if current_user %>
-
-      <nav><h2>Hi, <%= current_user.user_name %>!</h2></nav>
-      <nav><%= link_to "Logout", sessions_path, method: :delete %></nav>
-      <nav><%= link_to 'Purchase a ticket', parking_zones_path %></nav> 
-      <nav><%= link_to 'Edit User', edit_user_path(current_user.id)%>
-
-    <% else %>
-    <div class="custom-padding">
-      <nav>
-        <div class="logo">SnAppy</div>
-    
-        <ul class="menu-area">
-          <li><a href="/">Home</a></li>
-          <li><%= link_to "Login", new_session_path %></li>
-          
-        </ul>
+      <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">SnAppy Parking</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" <%= link_to "Hi, #{current_user.user_name}!" , user_path(current_user.id) %></a>
+                <a class="nav-item nav-link" <%= link_to 'Purchase a ticket', parking_zones_path %></a>
+                <a class="nav-item nav-link" <%= link_to 'Edit User', edit_user_path(current_user.id)%></a>
+                <a class="nav-item nav-link" <%= link_to "Logout", sessions_path, method: :delete %></a>
+              </div>
+          </div>
       </nav>
+    <% else %>
+      <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">SnAppy</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link" <%= link_to "Login", new_session_path %></a>
+                <a class="nav-item nav-link" <%= link_to "Create a New User", new_user_path %></a>
+              </div>
+          </div>
+      </nav>  
     <% end %>
     <%= yield %>
   </body >
+  
 </html>
 
 
