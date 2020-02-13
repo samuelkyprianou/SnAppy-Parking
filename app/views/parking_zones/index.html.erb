@@ -6,12 +6,13 @@
 <p class= "lead">Select a Parking zone:</p>
 <ul>
     <% @parking_zones.each do |parking_zone| %>
-      <li><%= link_to parking_zone.area_name, parking_zone %></li>  
+      <li class="text-danger"><%= link_to parking_zone.area_name, parking_zone %></li>  
     <% end %>
   </ul>
-<%= link_to "Back", user_path(current_user.id) %>
+  <%= link_to "Back", user_path(current_user.id) %>
 
 
 </div>
 </div>
 </div>
+

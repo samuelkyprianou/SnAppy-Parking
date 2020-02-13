@@ -18,23 +18,37 @@
 
 
 <%= form_for(@user) do |f| %>
-  <%= f.label :username %>:
-  <%= f.text_field :user_name %><br>
-  <%= f.label :first_name %>:
-  <%= f.text_field :first_name %><br>
-  <%= f.label :last_name %>:
-  <%= f.text_field :last_name %><br>
-  <%= f.label :email %>:
-  <%= f.email_field :email %><br>
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-  <%= f.label :password %>:
-  <%= f.password_field :password %><br><br>
-  <%= f.submit class: "btn btn-danger" %>
-  <%end%>
-
+  <table class = "center">
+    <tbody>
+      <tr>
+        <td><%= f.label :username %>:</td>
+        <td><%= f.text_field :user_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :first_name %>:</td>
+        <td><%= f.text_field :first_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :last_name %>:</td>
+        <td> <%= f.text_field :last_name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :email %>:</td>
+        <td><%= f.email_field :email %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :password %>:</td>
+        <td><%= f.password_field :password %></td>
+      </tr>
+    </tbody>
+  </table><br>
+  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small><br>
+  <button type="submit" class="btn btn-danger text-uppercase " >Create User</button>
+  <% end %>
+  <br>
   <%= link_to "Home", root_path %>
-
 </body>
 
-
-
+</div>
+</div>
+</div>
