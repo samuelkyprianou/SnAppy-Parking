@@ -10,7 +10,7 @@
     </ul>
         <% if @car_user.tickets.count >= 1 %>
 
-    <h3>Active Tickets:</h3>
+    <h3 class = "orange" >Active Tickets:</h3>
         <ul>
             <% @car_user.active_tickets.each do |ticket| %>
                 <li><%= link_to "#{ticket.space.street_name}, Purchased - #{ticket.created_at.strftime("%B %d, %Y at %H:%M")}", ticket_path(ticket.id) %></li>
@@ -18,7 +18,7 @@
         </ul>
 
 
-    <h3>Recentley Expired Tickets:</h3>
+    <h3 class = "orange">Recently Expired Tickets:</h3>
             <ul>
                 <% @car_user.expired_tickets.each do |ticket| %>
                     <li><%= link_to "#{ticket.space.street_name}, Purchased - #{ticket.created_at.strftime("%B %d, %Y at %H:%M")}, Expired - #{ticket.expiration.strftime("%B %d, %Y at %H:%M")}", ticket_path(ticket.id) %></li>

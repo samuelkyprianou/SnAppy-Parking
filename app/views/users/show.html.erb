@@ -16,8 +16,8 @@
         <tbody>
           <% @user.car_users.each do |cu| %>
             <tr>
-              <td><%= link_to cu.car.make, car_user_path(cu) %></td>
               
+              <td><%= link_to cu.car.make, car_user_path(cu), class: "btn btn-danger"%></td>
               <td><%= link_to 'Destroy', cu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
