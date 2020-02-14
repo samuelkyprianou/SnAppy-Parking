@@ -37,6 +37,10 @@ body {
   .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited, .btn-danger {
     background-color: rgb(255, 115, 0) !important;
 }
- 
 
+.tableFixHead          { overflow-y: auto; height: 500px; }
+.tableFixHead thead th { position: sticky; top: 0; }
+.tableFixHead table  { border-collapse: collapse; width: 100%; }
+.tableFixHead th, td { padding: 8px 16px; }
+.tableFixHead th     { background:#eee; }
 

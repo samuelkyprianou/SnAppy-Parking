@@ -4,24 +4,26 @@
       <div class="card-body p-5">
 <h2 class= "cover-heading" style="color:rgb(255, 115, 0)" >You are looking at streets in <%= @parking_zone.area_name %>:</h2>
 <p class= "lead">Street Name:</p>
-<table class="table table-striped table-hover">
+<div class="tableFixHead table table-striped">
+<table>
  <thead>
     <tr>
-      <th>Street Name</th>
-      <th>Spaces Available</th>
+      <th >Street Name</th>
+      <th class="text-center" >Spaces Available</th>
     </tr>
   </thead>
 <tbody>
         <% @parking_zone.unique_street_names.each do |street|%>
         <tr>
             <td><%= link_to street.street_name, street_ticket_path(:parking_zone_id => street.parking_zone_id, :street_name => street.street_name) %></td>
-            <td><%= street.number_active_spaces %></td> 
+            <td class="text-center"><%= street.number_active_spaces %></td> 
         </tr>
             
             <% end %>
         
     </tbody>
 </table>
+</div>
         <%= link_to '<button type="button" class="btn btn-danger text-uppercase ">Back</button>'.html_safe, parking_zones_path %>
 </div>
 </div>

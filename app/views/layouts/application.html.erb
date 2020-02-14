@@ -19,7 +19,6 @@
 
 
 
-     <% if current_user %>
       <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark menu-area">
         <a class="navbar-brand" href="/" style="color: white">SnAppy Parking</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,24 +26,20 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div class="navbar-nav" style="color: white">
+     <% if current_user %>
                 <a style="color: white" class="nav-item nav-link" <%= link_to "Hi, #{current_user.user_name}!" , user_path(current_user.id) %></a>
                 <a style="color: white" class="nav-item nav-link" <%= link_to 'Purchase a ticket', parking_zones_path %></a>
                 <a style="color: white" class="nav-item nav-link" <%= link_to 'Edit User', edit_user_path(current_user.id)%></a>
+                <a style="color: white" class="nav-item nav-link" <%= link_to "Register Car", new_car_path %></a>
                 <a style="color: white" class="nav-item nav-link" <%= link_to "Logout", sessions_path, method: :delete %></a>
               </div>
           </div>
 
       </nav>
     <% else %>
-      <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">SnAppy</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-item nav-link" <%= link_to "Login", new_session_path %></a>
-                <a class="nav-item nav-link" <%= link_to "Create a New User", new_user_path %></a>
+      
+                <a style="color: white" class="nav-item nav-link" <%= link_to "Login", new_session_path %></a>
+                <a style="color: white" class="nav-item nav-link" <%= link_to "Create a New User", new_user_path %></a>
               </div>
           </div>
       </nav>  
