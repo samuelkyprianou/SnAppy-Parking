@@ -1,24 +1,5 @@
-# README
+# SnAppy Parking
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This handy web app was designed with efficiency in mind.
+Built with a ruby-on-rails backend and custom CSS for display.
+Seeded with real-time parking space data scraped from .gov website plus a google map API to give added functionality.
